@@ -1,0 +1,3011 @@
+{
+  "info": {
+    "_postman_id": "ba650eee-6fee-4003-b118-0e5ac36dec31",
+    "name": "Groovify Vinylshop Web Api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39435349"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "login customer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"recordlover_04\",\n    \"password\": \"password123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/auth/login",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login employee",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"employee_eline\",\n    \"password\": \"employee\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/auth/login",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login admin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"admin_lars\",\n    \"password\": \"admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/auth/login",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get current user details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/auth/me",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "validate token",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/auth/validate-token",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "auth",
+                "validate-token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refresh token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/auth/refresh-token",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "auth",
+                "refresh-token"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Vinyl Records",
+      "item": [
+        {
+          "name": "Artists Relation",
+          "item": [
+            {
+              "name": "add artist to vinyl record",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/vinyl-records/:id/artist/:artistId",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "vinyl-records",
+                    ":id",
+                    "artist",
+                    ":artistId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "21"
+                    },
+                    {
+                      "key": "artistId",
+                      "value": "15"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "remove artist from vinyl record",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/vinyl-records/:id/artist",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "vinyl-records",
+                    ":id",
+                    "artist"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "14"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "get all vinyl records",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records"
+              ],
+              "query": [
+                {
+                  "key": "title",
+                  "value": "rumours",
+                  "disabled": true
+                },
+                {
+                  "key": "genre",
+                  "value": "jazz",
+                  "description": "Options: rock, pop, jazz, blues, classical, hip_hop, rap, electronic, metal, reggae, country, folk, funk, soul, rnb, latin, punk, disco, house, techno or other;",
+                  "disabled": true
+                },
+                {
+                  "key": "artist",
+                  "value": "beatles",
+                  "description": "Artist name",
+                  "disabled": true
+                },
+                {
+                  "key": "minPrice",
+                  "value": "20.00",
+                  "disabled": true
+                },
+                {
+                  "key": "maxPrice",
+                  "value": "25.00",
+                  "disabled": true
+                },
+                {
+                  "key": "releasedAfter",
+                  "value": "01-01-2001",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "releasedBefore",
+                  "value": "01-01-2010",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "isLimitedEdition",
+                  "value": "true",
+                  "description": "Options: true of false",
+                  "disabled": true
+                },
+                {
+                  "key": "isAvailable",
+                  "value": "true",
+                  "description": "Options: true or false",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "bestselling",
+                  "description": "Options: id, price, release date, bestselling and title",
+                  "disabled": true
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "desc",
+                  "description": "Options: desc or asc",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get vinyl record by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "12"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get vinyl record by title",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records/title/:title",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records",
+                "title",
+                ":title"
+              ],
+              "variable": [
+                {
+                  "key": "title",
+                  "value": "news of the world"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create new vinyl record",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Queen of Soul\",\n  \"description\": \"A timeless collection of Aretha Franklin's greatest hits, showcasing her legendary impact on soul music.\",\n  \"genre\": \"SOUL\",\n  \"label\": \"Cult Legends\",\n  \"price\": 21.99,\n  \"releaseDate\": \"2018-10-19\",\n  \"playTimeSeconds\": 3900,\n  \"isLimitedEdition\": false,\n  \"ean\": \"8717662577666\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update vinyl record",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Lemonade\",\n    \"description\": \"A powerful and emotionally charged visual album by Beyoncé.\",\n    \"genre\": \"RNB\",\n    \"label\": \"Parkwood Entertainment\",\n    \"price\": 21.99,\n    \"releaseDate\": \"2016-04-23\",\n    \"playTimeSeconds\": 5400,\n    \"isLimitedEdition\": false,\n    \"ean\": \"4567890123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "partial update vinyl record",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": null,\n    \"description\": null,\n    \"genre\": null,\n    \"label\": null,\n    \"price\": 25.99,\n    \"releaseDate\": null,\n    \"playTimeSeconds\": null,\n    \"isLimitedEdition\": false,\n    \"ean\": \"4567890123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete vinyl record",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Vinyl Records Stock",
+      "item": [
+        {
+          "name": "get stock by vinyl record",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records/:id/stock",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records",
+                ":id",
+                "stock"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create new stock",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"amountInStock\" : 22,\n    \"amountSold\" : 0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records/:id/stock",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records",
+                ":id",
+                "stock"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "21"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update stock",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"amountInStock\" : 20,\n    \"amountSold\" : 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records/:id/stock",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records",
+                ":id",
+                "stock"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete stock",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records/:id/stock",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records",
+                ":id",
+                "stock"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Vinyl Record Covers",
+      "item": [
+        {
+          "name": "download cover",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records/:id/cover",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records",
+                ":id",
+                "cover"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "upload cover",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/Users/anne/Desktop/album covers/viva_la_vida.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records/:id/cover",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records",
+                ":id",
+                "cover"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete cover",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/vinyl-records/:id/cover",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "vinyl-records",
+                ":id",
+                "cover"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Artists",
+      "item": [
+        {
+          "name": "get all artists",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/artists",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "artists"
+              ],
+              "query": [
+                {
+                  "key": "country",
+                  "value": "United Kingdom",
+                  "disabled": true
+                },
+                {
+                  "key": "name",
+                  "value": "Queen",
+                  "disabled": true
+                },
+                {
+                  "key": "debutedAfter",
+                  "value": "01-01-2002",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "debutedBefore",
+                  "value": "01-01-2012",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "minPopularity",
+                  "value": "50",
+                  "description": "Between 0-100",
+                  "disabled": true
+                },
+                {
+                  "key": "maxPopularity",
+                  "value": "70",
+                  "description": "Between 0-100",
+                  "disabled": true
+                },
+                {
+                  "key": "isGroup",
+                  "value": "true",
+                  "description": "Options: true or false",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "popularity",
+                  "description": "Options: id, popularity, debut date or name",
+                  "disabled": true
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "desc",
+                  "description": "Options: asc or desc",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get artist by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/artists/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "artists",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "11"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get artist by name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/artists/name/:name",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "artists",
+                "name",
+                ":name"
+              ],
+              "variable": [
+                {
+                  "key": "name",
+                  "value": "queen"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create new artist",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Elvis Presley\",\n    \"isGroup\": false,\n    \"debutDate\": \"1954-07-05\",\n    \"countryOfOrigin\": \"United States\",\n    \"popularity\": 75\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/artists",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "artists"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update artist",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"The Beatles\",\n    \"isGroup\": true,\n    \"debutDate\": \"1963-03-22\",\n    \"countryOfOrigin\": \"United Kingdom\",\n    \"popularity\": 90\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/artists/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "artists",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "partial update artist",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": null,\n    \"isGroup\": null,\n    \"debutDate\": null,\n    \"countryOfOrigin\": null,\n    \"popularity\": 80\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/artists/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "artists",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "8"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete artist",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/artists/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "artists",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Roles",
+      "item": [
+        {
+          "name": "get roles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/roles",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "roles"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Roles Relation",
+          "item": [
+            {
+              "name": "get user roles",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/users/:id/roles",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id",
+                    "roles"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "12"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "add roles to user",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\"ADMIN\"]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseurl}}/users/:id/roles",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id",
+                    "roles"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "15"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "remove roles from user",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\"ADMIN\"]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseurl}}/users/:id/roles",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id",
+                    "roles"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "15"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "get all users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/users",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "userType",
+                  "value": "customer",
+                  "description": "Options: customer or employee",
+                  "disabled": true
+                },
+                {
+                  "key": "firstName",
+                  "value": "Mila",
+                  "disabled": true
+                },
+                {
+                  "key": "lastName",
+                  "value": "Janssen",
+                  "disabled": true
+                },
+                {
+                  "key": "isDeleted",
+                  "value": "false",
+                  "description": "Options: true or false",
+                  "disabled": true
+                },
+                {
+                  "key": "deletedAfter",
+                  "value": "31-03-2025",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "deletedBefore",
+                  "value": "01-05-2025",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "id",
+                  "description": "Options: id, email or last name",
+                  "disabled": true
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "desc",
+                  "description": "Options: asc or desc",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get user by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/users/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deactivate user",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/users/:id/deactivate",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "users",
+                ":id",
+                "deactivate"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reactivate user",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/users/:id/reactivate",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "users",
+                ":id",
+                "reactivate"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "change password",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"oldPassword\": \"password123\",\n    \"newPassword\": \"password456\",\n    \"confirmPassword\": \"password456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/users/:id/change-password",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "users",
+                ":id",
+                "change-password"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Customers",
+      "item": [
+        {
+          "name": "Addresses",
+          "item": [
+            {
+              "name": "get customer addresses",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/addresses",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "addresses"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get customer address by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/addresses/:addressId",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "addresses",
+                    ":addressId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    },
+                    {
+                      "key": "addressId",
+                      "value": "9"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get customer default addresses",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/addresses/defaults",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "addresses",
+                    "defaults"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create customer address",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"street\": \"Herengracht\",\n    \"houseNumber\": \"68A\",\n    \"city\": \"Amsterdam\",\n    \"postalCode\": \"1012AB\",\n    \"country\": \"Netherlands\",\n    \"isShippingAddress\": true,\n    \"isBillingAddress\": true\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/addresses",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "addresses"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update customer address",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"street\": \"Kouter\",\n    \"houseNumber\": \"12\",        \n    \"city\": \"Gent\",\n    \"postalCode\": \"9000\",\n    \"country\": \"Belgium\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/addresses/:addressId",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "addresses",
+                    ":addressId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    },
+                    {
+                      "key": "addressId",
+                      "value": "10"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "set customer default address",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"isShippingAddress\": true,\n    \"isBillingAddress\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/addresses/:addressId/defaults",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "addresses",
+                    ":addressId",
+                    "defaults"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    },
+                    {
+                      "key": "addressId",
+                      "value": "8"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete customer address",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/addresses/:addressId",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "addresses",
+                    ":addressId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    },
+                    {
+                      "key": "addressId",
+                      "value": "11"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Favorite Vinyl Records",
+          "item": [
+            {
+              "name": "get favorite vinyl records",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/favorite-records",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "favorite-records"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "add favorite vinyl record to customer",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/favorite-records/:vinylId",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "favorite-records",
+                    ":vinylId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    },
+                    {
+                      "key": "vinylId",
+                      "value": "15"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "remove favorite vinyl record from customer",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/favorite-records/:vinylId",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "favorite-records",
+                    ":vinylId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    },
+                    {
+                      "key": "vinylId",
+                      "value": "12"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Carts",
+          "item": [
+            {
+              "name": "get customer cart",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/cart",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "cart"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "add item to cart",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"quantity\": 2,\n    \"vinylRecordId\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/cart/items",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "cart",
+                    "items"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update item quantity",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"newQuantity\": 3\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/cart/items/:itemId",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "cart",
+                    "items",
+                    ":itemId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    },
+                    {
+                      "key": "itemId",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "remove item from cart",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/cart/items/:itemId",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "cart",
+                    "items",
+                    ":itemId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    },
+                    {
+                      "key": "itemId",
+                      "value": "6"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "clear cart",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/cart/items",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "cart",
+                    "items"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Orders",
+          "item": [
+            {
+              "name": "get customer orders",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/orders",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "orders"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "get customer order by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/customers/:id/orders/:orderId",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "customers",
+                    ":id",
+                    "orders",
+                    ":orderId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    },
+                    {
+                      "key": "orderId",
+                      "value": "7"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "get all customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/customers",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "customers"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "Lisa",
+                  "disabled": true
+                },
+                {
+                  "key": "lastName",
+                  "value": "Van Acker",
+                  "disabled": true
+                },
+                {
+                  "key": "newsletterSubscribed",
+                  "value": "true",
+                  "description": "Options: true or false",
+                  "disabled": true
+                },
+                {
+                  "key": "country",
+                  "value": "Netherlands",
+                  "disabled": true
+                },
+                {
+                  "key": "city",
+                  "value": "Amsterdam",
+                  "disabled": true
+                },
+                {
+                  "key": "postalCode",
+                  "value": "1012 LK",
+                  "disabled": true
+                },
+                {
+                  "key": "houseNumber",
+                  "value": "33 B",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "last name",
+                  "description": "Options: id, email and last name",
+                  "disabled": true
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "desc",
+                  "description": "Options: asc or desc",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get customer by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/customers/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get customer by username",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/customers/username/:username",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "customers",
+                "username",
+                ":username"
+              ],
+              "variable": [
+                {
+                  "key": "username",
+                  "value": "recordlover_04"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "register customer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"vinylfanatic123\",\n  \"email\": \"samsmit@example.com\",\n  \"password\": \"password123\",\n  \"firstName\": \"Sam\",\n  \"lastName\": \"Smit\",\n  \"dateOfBirth\": \"1990-04-25\",\n  \"phone\": \"0620987698\",\n  \"newsletterSubscribed\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/customers",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update customer",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"recordlover_04\",\n    \"email\": \"sophie.maes@test.com\",\n    \"firstName\": \"Sophie\",\n    \"lastName\": \"Maes\",\n    \"dateOfBirth\": \"1978-05-18\",\n    \"phone\": \"0645678901\",\n    \"newsletterSubscribed\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/customers/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Employees",
+      "item": [
+        {
+          "name": "Addresses",
+          "item": [
+            {
+              "name": "get employee address",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/employees/:id/address",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "employees",
+                    ":id",
+                    "address"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "14"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create employee address",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"street\": \"Reguliersdwarsstraat\",\n    \"houseNumber\": \"8B\",\n    \"city\": \"Utrecht\",\n    \"postalCode\": \"3511XK\",\n    \"country\": \"Netherlands\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseurl}}/employees/:id/address",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "employees",
+                    ":id",
+                    "address"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "15"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update employee address",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"street\": \"Korenmarkt\",\n    \"houseNumber\": \"15\",\n    \"city\": \"Gent\",\n    \"postalCode\": \"9000\",\n    \"country\": \"Belgium\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseurl}}/employees/:id/address",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "employees",
+                    ":id",
+                    "address"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "14"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "get all employees",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/employees",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "employees"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "Daan",
+                  "disabled": true
+                },
+                {
+                  "key": "lastName",
+                  "value": "Koning",
+                  "disabled": true
+                },
+                {
+                  "key": "jobTitle",
+                  "value": "sales",
+                  "disabled": true
+                },
+                {
+                  "key": "minSalary",
+                  "value": "3500.00",
+                  "disabled": true
+                },
+                {
+                  "key": "maxSalary",
+                  "value": "5500.00",
+                  "disabled": true
+                },
+                {
+                  "key": "country",
+                  "value": "Belgium",
+                  "disabled": true
+                },
+                {
+                  "key": "city",
+                  "value": "Gent",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "work hours",
+                  "description": "Options: id, salary, work hours and last name",
+                  "disabled": true
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "desc",
+                  "description": "Options: asc and desc",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get employee by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/employees/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "employees",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "14"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get employee by username",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/employees/username/:username",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "employees",
+                "username",
+                ":username"
+              ],
+              "variable": [
+                {
+                  "key": "username",
+                  "value": "employee_eline"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "register employee",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"employee_mo\",\n  \"email\": \"mosmit@example.com\",\n  \"password\": \"SecurePassword123\",\n  \"firstName\": \"Mo\",\n  \"lastName\": \"Smit\",\n  \"dateOfBirth\": \"1995-05-15\",\n  \"phone\": \"0612345678\",\n  \"jobTitle\": \"Sales Associate\",\n  \"salary\": 4400.0,\n  \"workHours\": 32,\n  \"isAdmin\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/employees",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "employees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update employee",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"employee_eline\",\n  \"email\": \"eline.peeters@vinylshop.com\",\n  \"firstName\": \"Eline\",\n  \"lastName\": \"Peeters\",\n  \"dateOfBirth\": \"1992-07-20\",\n  \"phone\": \"0652603659\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/employees/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "employees",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "14"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update employee by admin",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jobTitle\": \"Sales Associate\",\n  \"salary\": 4000.0,\n  \"workHours\": 36\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/employees/:id/admin",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "employees",
+                ":id",
+                "admin"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "14"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Addresses",
+      "item": [
+        {
+          "name": "get all addresses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/addresses",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "addresses"
+              ],
+              "query": [
+                {
+                  "key": "addressId",
+                  "value": "23",
+                  "disabled": true
+                },
+                {
+                  "key": "customerId",
+                  "value": "3",
+                  "disabled": true
+                },
+                {
+                  "key": "employeeId",
+                  "value": "12",
+                  "disabled": true
+                },
+                {
+                  "key": "userType",
+                  "value": "customer",
+                  "description": "Options: customer or employee",
+                  "disabled": true
+                },
+                {
+                  "key": "inactiveUsers",
+                  "value": "true",
+                  "description": "Options: true or false",
+                  "disabled": true
+                },
+                {
+                  "key": "isShipping",
+                  "value": "true",
+                  "description": "Options: true or false",
+                  "disabled": true
+                },
+                {
+                  "key": "isBilling",
+                  "value": "true",
+                  "description": "Options: true or false",
+                  "disabled": true
+                },
+                {
+                  "key": "isStandAlone",
+                  "value": "false",
+                  "description": "Options: true or false",
+                  "disabled": true
+                },
+                {
+                  "key": "country",
+                  "value": "Netherlands",
+                  "disabled": true
+                },
+                {
+                  "key": "city",
+                  "value": "Leiden",
+                  "disabled": true
+                },
+                {
+                  "key": "postalCode",
+                  "value": "2312 KL",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "city",
+                  "description": "Options: id, country, city or postal code",
+                  "disabled": true
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "desc",
+                  "description": "Options: desc or asc",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all customer shipping addresses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/addresses/customers",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "addresses",
+                "customers"
+              ],
+              "query": [
+                {
+                  "key": "country",
+                  "value": "Belgium",
+                  "disabled": true
+                },
+                {
+                  "key": "city",
+                  "value": "Gent",
+                  "disabled": true
+                },
+                {
+                  "key": "postalCode",
+                  "value": "2312",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "postal code",
+                  "description": "Options:  id, country, city or postal code",
+                  "disabled": true
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "desc",
+                  "description": "Options: asc or desc",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get stand alone address by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/addresses/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "addresses",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "33"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create stand alone address",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"street\": \"Molenstraat\",\n    \"houseNumber\": \"69\",\n    \"city\": \"Ulvenhout\",\n    \"postalCode\": \"4851SJ\",\n    \"country\": \"Netherlands\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/addresses",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "addresses"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete stand alone address",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/addresses/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "addresses",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "35"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Carts",
+      "item": [
+        {
+          "name": "get all carts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/carts",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "carts"
+              ],
+              "query": [
+                {
+                  "key": "createdAfter",
+                  "value": "28-02-2025",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "createdBefore",
+                  "value": "01-04-2025",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "updatedAfter",
+                  "value": "01-04-2025",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "updatedBefore",
+                  "value": "20-04-2025",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "customerId",
+                  "value": "3",
+                  "disabled": true
+                },
+                {
+                  "key": "isEmpty",
+                  "value": "false",
+                  "description": "Options: true or false",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "updated at",
+                  "description": "Options: id, created at or updated at",
+                  "disabled": true
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "desc",
+                  "description": "Options: asc or desc",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get cart by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/carts/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "carts",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "8"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete cart",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/carts/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "carts",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Invoices",
+          "item": [
+            {
+              "name": "get invoice by order",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/orders/:id/invoice",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "orders",
+                    ":id",
+                    "invoice"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "7"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "get all orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/orders",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "confirmationStatus",
+                  "value": "PENDING",
+                  "description": "Options: pending or confirmed",
+                  "disabled": true
+                },
+                {
+                  "key": "paymentStatus",
+                  "value": "PAID",
+                  "description": "Options: not_applicable, paid, awaiting_payment, awaiting_refund, refunded or failed",
+                  "disabled": true
+                },
+                {
+                  "key": "shippingStatus",
+                  "value": "DELIVERED",
+                  "description": "Options: not_applicable, processing, processed, shipped, delivered, lost, damaged, return_requested, return_declined, in_return or returned",
+                  "disabled": true
+                },
+                {
+                  "key": "excludedShippingStatuses",
+                  "value": "RETURNED, LOST, DAMAGED",
+                  "description": "Options: not_applicable, processing, processed, shipped, delivered, lost, damaged, return_requested, return_declined, in_return and/or returned",
+                  "disabled": true
+                },
+                {
+                  "key": "orderedAfter",
+                  "value": "28-02-2025",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "orderedBefore",
+                  "value": "01-04-2025",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "minTotalPrice",
+                  "value": "76.00",
+                  "disabled": true
+                },
+                {
+                  "key": "maxTotalPrice",
+                  "value": "100.00",
+                  "disabled": true
+                },
+                {
+                  "key": "isDeleted",
+                  "value": "false",
+                  "description": "Options: true or false",
+                  "disabled": true
+                },
+                {
+                  "key": "deletedAfter",
+                  "value": "31-03-2025",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "deletedBefore",
+                  "value": "01-05-2025",
+                  "description": "Date format: dd-mm-yyyy",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "sub total price",
+                  "description": "Options: id, sub total price or order date",
+                  "disabled": true
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "desc",
+                  "description": "Options: desc or asc",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get order by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/orders/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "orders",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "9"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "place order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"customerId\": 4,\n    \"expectedDeliveryDate\": null,\n    \"recipientName\": null,\n    \"shippingCost\": 4.99,\n    \"note\": null,\n    \"paymentMethod\": \"IDEAL\",\n    \"shippingAddressId\": 8,\n    \"billingAddressId\": 9\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/orders",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update pending order",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"expectedDeliveryDate\": null,\n    \"recipientName\": null,\n    \"shippingCost\": 2.99,\n    \"note\": null,\n    \"paymentMethod\": null,\n    \"shippingAddressId\": 33,\n    \"billingAddressId\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/orders/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "orders",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "18"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update order statuses",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"confirmationStatus\": \"CONFIRMED\",\n    \"paymentStatus\": \"PAID\",\n    \"shippingStatus\": \"PROCESSING\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseurl}}/orders/:id/status",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "orders",
+                ":id",
+                "status"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "17"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "cancel order",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/orders/:id",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "orders",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "18"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deactivate order",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/orders/:id/deactivate",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "orders",
+                ":id",
+                "deactivate"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "16"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reactivate order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/orders/:id/reactivate",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "orders",
+                ":id",
+                "reactivate"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "16"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "get dashboard",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/dashboard",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "dashboard"
+              ],
+              "query": [
+                {
+                  "key": "topN",
+                  "value": "5",
+                  "description": "Number of top-selling vinyl records to return",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get bestsellers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/dashboard/bestsellers",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "dashboard",
+                "bestsellers"
+              ],
+              "query": [
+                {
+                  "key": "topN",
+                  "value": "5",
+                  "description": "Number of top-selling vinyl records to return",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwic3ViIjoicmVjb3JkbG92ZXJfMDQiLCJpYXQiOjE3NDQzNzg4ODcsImV4cCI6MTc0NDQ2NTI4N30.J_2_EZh29kXrDI9J8KJNym0bijLFwRx5XoJBtEut4jc",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
